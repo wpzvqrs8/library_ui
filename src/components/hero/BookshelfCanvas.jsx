@@ -38,19 +38,20 @@ function CameraRig() {
   return null;
 }
 
-/* ── Book layout: 2 rows of 10 ── */
+/* ── Book layout: 3 rows of 10 ── */
 function BooksScene() {
-  // Row 1 (top shelf)  — books 0-9
-  // Row 2 (bot shelf) — books 10-19
-  const rowY   = [0.15, -1.65];
+  // Row 1 (top shelf)  
+  // Row 2 (middle shelf)
+  // Row 3 (bottom shelf)
+  const rowY   = [1.28, -0.54, -2.34];
   const startX = -5.85;
   const spacingX = 1.3;
 
   return (
     <>
       {BOOKS.map((book, idx) => {
-        const row  = idx < 10 ? 0 : 1;
-        const col  = idx < 10 ? idx : idx - 10;
+        const row  = Math.floor(idx / 10);
+        const col  = idx % 10;
         const x    = startX + col * spacingX + (col * book.id * 0.004);
         const y    = rowY[row];
         return (

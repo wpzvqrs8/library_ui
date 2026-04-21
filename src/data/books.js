@@ -23,6 +23,16 @@ export const BOOKS = [
   { id: 18, title: "Database Systems Design",      author: "Dr. K. Pillai",      category: "CS",          color: "#0A1A3A", year: 2023, desc: "Relational models, query optimization, and NoSQL." },
   { id: 19, title: "Strength of Materials",        author: "Prof. B. Chaudhary", category: "Civil Engg",  color: "#2A1A2A", year: 2021, desc: "Stress, strain, and structural analysis fundamentals." },
   { id: 20, title: "The Poetics of Silence",       author: "Dr. L. Kapoor",      category: "Literature",  color: "#1A1A0A", year: 2020, desc: "A meditation on absence and meaning in modern fiction." },
+  { id: 21, title: "Modern Operating Systems",     author: "Prof. S. Gupta",     category: "CS",          color: "#2A3A4A", year: 2021, desc: "Kernels, concurrency, and distributed systems." },
+  { id: 22, title: "History of the Silk Road",     author: "Dr. M. Chen",        category: "History",     color: "#4A2A1A", year: 2019, desc: "Trade and cultural exchange across ancient Eurasia." },
+  { id: 23, title: "Algorithms for AI",            author: "A. Sharma",          category: "CS / AI",     color: "#1A1A3A", year: 2024, desc: "Core algorithms deep dive." },
+  { id: 24, title: "Differential Equations",       author: "Dr. V. Raman",       category: "Mathematics", color: "#0A1A1A", year: 2018, desc: "Analytical and numerical methods." },
+  { id: 25, title: "Cognitive Neuroscience",       author: "Dr. P. Desai",       category: "Psychology",  color: "#3A1A2A", year: 2022, desc: "Brain mechanisms underlying human cognition." },
+  { id: 26, title: "Cyber Security Principles",    author: "K. Reddy",           category: "CS",          color: "#0A3A2A", year: 2023, desc: "Cryptography, network security, and risk." },
+  { id: 27, title: "Aerodynamics Fundamentals",    author: "Prof. H. Singh",     category: "Engineering", color: "#1A3A3A", year: 2021, desc: "Fluid dynamics applied to flight." },
+  { id: 28, title: "Contemporary Poetry",          author: "S. Banerjee",        category: "Literature",  color: "#4A1A2A", year: 2022, desc: "Selected works from modern poets." },
+  { id: 29, title: "Introduction to Sociology",    author: "Dr. N. Kumar",       category: "Sociology",   color: "#2A2A3A", year: 2020, desc: "Society, culture, and social interactions." },
+  { id: 30, title: "Astrophysics and Cosmology",   author: "Prof. R. Menon",     category: "Physics",     color: "#0A0A2A", year: 2023, desc: "From stars to the expanding universe." },
 ];
 
 export const FEATURED = [

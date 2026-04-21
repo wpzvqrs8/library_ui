@@ -60,6 +60,7 @@ function createSpineTexture(book) {
   ctx.restore();
 
   const tex          = new THREE.CanvasTexture(canvas);
+  tex.colorSpace     = THREE.SRGBColorSpace;
   tex.needsUpdate    = true;
   return tex;
 }
@@ -67,6 +68,7 @@ function createSpineTexture(book) {
 /* ── Single 3D Book ── */
 const BookMesh = memo(function BookMesh({ book, position, neighborOffset = 0 }) {
   const [hovered, setHovered]   = useState(false);
+  const hoverTimeout            = useRef(null);
   const groupRef                = useRef();
   const { setCursorHint }       = useCursor();
 
@@ -82,7 +84,7 @@ const BookMesh = memo(function BookMesh({ book, position, neighborOffset = 0 }) 
     posZ:          hovered ? 1.85 : 0,
     posY:          hovered ? 0.06 : 0,
     scaleX:        hovered ? 1.04 : 1,
-    glowIntensity: hovered ? 2.0 : 0,
+    glowIntensity: hovered ? 15.0 : 0,
     config:        { tension: 180, friction: 22 },
   });
 
@@ -94,13 +96,16 @@ const BookMesh = memo(function BookMesh({ book, position, neighborOffset = 0 }) 
 
   const handlePointerEnter = useCallback((e) => {
     e.stopPropagation();
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
     setHovered(true);
     setCursorHint('book');
     document.body.style.cursor = 'none';
   }, [setCursorHint]);
 
   const handlePointerLeave = useCallback(() => {
-    setHovered(false);
+    hoverTimeout.current = setTimeout(() => {
+      setHovered(false);
+    }, 350);
     setCursorHint('default');
   }, [setCursorHint]);
 
