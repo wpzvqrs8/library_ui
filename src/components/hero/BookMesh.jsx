@@ -105,7 +105,7 @@ const BookMesh = memo(function BookMesh({ book, position, neighborOffset = 0 }) 
   const handlePointerLeave = useCallback(() => {
     hoverTimeout.current = setTimeout(() => {
       setHovered(false);
-    }, 350);
+    }, 3500); // 3.5 seconds
     setCursorHint('default');
   }, [setCursorHint]);
 
@@ -160,7 +160,7 @@ const BookMesh = memo(function BookMesh({ book, position, neighborOffset = 0 }) 
             <div className="bp-actions">
               <button
                 className="bp-btn-read"
-                onClick={() => alert(`Opening "${book.title}"…`)}
+                onClick={() => window.dispatchEvent(new CustomEvent('showComingSoon'))}
               >
                 Read Now
               </button>
@@ -168,7 +168,7 @@ const BookMesh = memo(function BookMesh({ book, position, neighborOffset = 0 }) 
                 className="bp-btn-shelf"
                 aria-label="Add to shelf"
                 title="Add to My Shelf"
-                onClick={() => alert(`Added "${book.title}" to your shelf!`)}
+                onClick={() => window.dispatchEvent(new CustomEvent('showComingSoon'))}
               >
                 🔖
               </button>

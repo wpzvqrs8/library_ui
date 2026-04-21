@@ -14,6 +14,7 @@ import StatsBanner from './components/StatsBanner';
 import HowItWorks from './components/HowItWorks';
 import TestimonialsSection from './components/TestimonialsSection';
 import Footer from './components/Footer';
+import ComingSoonOverlay from './components/ComingSoonOverlay';
 
 /* ── 3D Canvas load fallback ── */
 function CanvasFallback() {
@@ -113,6 +114,7 @@ export default function App() {
 
         {/* ── Footer ── */}
         <Footer />
+        <ComingSoonOverlay />
       </SmoothScroll>
     </CursorProvider>
   );
