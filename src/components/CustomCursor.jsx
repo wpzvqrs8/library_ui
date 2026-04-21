@@ -64,7 +64,7 @@ export default function CustomCursor() {
           marginLeft: -cursorSize / 2,
           marginTop: -cursorSize / 2,
           pointerEvents: 'none',
-          zIndex: 'var(--z-cursor)',
+          zIndex: 999999,
           transition: 'width 0.2s ease, height 0.2s ease, filter 0.2s ease',
           filter: isBook ? 'drop-shadow(0 0 8px rgba(200,151,63,0.9))' : 'none',
           willChange: 'transform',
@@ -124,7 +124,7 @@ export default function CustomCursor() {
           borderRadius: '50%',
           background: 'rgba(200, 151, 63, 0.5)',
           pointerEvents: 'none',
-          zIndex: 'calc(var(--z-cursor) - 1)',
+          zIndex: 999998,
           willChange: 'transform',
           boxShadow: glow,
         }}
